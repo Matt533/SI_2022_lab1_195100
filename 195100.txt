@@ -1,0 +1,128 @@
+C:\Users\Matej\Desktop>git clone https://github.com/Matt533/SI_2022_lab1_195100 - (Правам локално копија од репозиториумот)
+C:\Users\Matej\Desktop>cd SI_2022_lab1_195100 (Влегувам во git директориумот)
+C:\Users\Matej\Desktop>SI_2022_lab1_195100>
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git add shopping_list.txt (Додавам фајл во stage area)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git commit -m "Add 5 items to the shopping list" (Правам commit на истиот)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git add shopping_list.txt
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git commit -m "Add quantities to the items" (Нов commit правиме по сменетата содржина во датотеката)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git branch branch1 (Kреирање на нова гранка, со име branch1)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git branch branch2 (Kреирање на нова гранка, со име branch2)
+
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git log (Со оваа команда ја следиме историјата на промени)
+commit 5973257971f4001dcad8071768b649d3a4d120b7 (HEAD -> master, branch2, branch1)
+Author: Matej Ljusev <mattljusev@gmail.com>
+Date:   Wed Mar 30 17:36:32 2022 +0200
+
+    Add quantities to the items
+
+commit 6a09c14883cef3297293a1df6aa7cb1ee879f5ec
+Author: Matej Ljusev <mattljusev@gmail.com>
+Date:   Wed Mar 30 17:34:59 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit 739b559ce0a25b64c124c42efb40efe02a692ceb (origin/master, origin/HEAD)
+Author: Matej <59237104+Matt533@users.noreply.github.com>
+Date:   Wed Mar 30 17:31:33 2022 +0200
+
+    Update README.md
+
+commit 944d344f7709ee920840fd7f2b1ad556c7076a1d
+Author: Matej <59237104+Matt533@users.noreply.github.com>
+Date:   Wed Mar 30 17:31:07 2022 +0200
+
+    Initial commit
+
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git push (Синхронизација со remote репозиториумот)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git checkout branch1 (Префрлање на гранката branch1)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git commit -a -m "Change quantity of item #5" (Додавање и комитирање во една команда)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git checkout master (Враќање на гранката master)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git commit -a -m "Change quantity of item #2" (Повторно додавање на фајлот во staged и правење комит со скратен запис)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git push (Синхронизација со remote репозиториумот на github)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git checkout branch2 (Префрлање на гранката branch2)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git commit -a -m "Modify item #4" (Промена на ставката број 4 во датотеката и повторно git add и git commit)
+
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git log
+commit 9d17b4cba3fcc5bf4609608904400105839d7b6f (HEAD -> branch2)
+Author: Matej Ljusev <mattljusev@gmail.com>
+Date:   Wed Mar 30 17:44:49 2022 +0200
+
+    Modify item #4
+
+commit 5973257971f4001dcad8071768b649d3a4d120b7
+Author: Matej Ljusev <mattljusev@gmail.com>
+Date:   Wed Mar 30 17:36:32 2022 +0200
+
+    Add quantities to the items
+
+commit 6a09c14883cef3297293a1df6aa7cb1ee879f5ec
+Author: Matej Ljusev <mattljusev@gmail.com>
+Date:   Wed Mar 30 17:34:59 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit 739b559ce0a25b64c124c42efb40efe02a692ceb
+Author: Matej <59237104+Matt533@users.noreply.github.com>
+Date:   Wed Mar 30 17:31:33 2022 +0200
+
+    Update README.md
+
+commit 944d344f7709ee920840fd7f2b1ad556c7076a1d
+Author: Matej <59237104+Matt533@users.noreply.github.com>
+Date:   Wed Mar 30 17:31:07 2022 +0200
+
+    Initial commit
+
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git commit -a -m "add item #6" (Направивме нов комит)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git rebase -i HEAD~2 (Со помош на командата git rebase -i , влегуваме во интерактивен едитор во кој направивме squash и pick и ги споивме двата комита во еден
+squash на вториот, pick на првиот.
+
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git log
+commit 724731fc8a4198919e9d031ee602ccd6359ed621 (HEAD -> branch2)
+Author: Matej Ljusev <mattljusev@gmail.com>
+Date:   Wed Mar 30 17:44:49 2022 +0200
+# Please enter the commit message for your changes. Lines starting
+    Modify item #4 and add item #6 empty message aborts the commit.
+#
+commit 5973257971f4001dcad8071768b649d3a4d120b7
+Author: Matej Ljusev <mattljusev@gmail.com>
+Date:   Wed Mar 30 17:36:32 2022 +0200 5973257
+# Last commands done (2 commands done):
+    Add quantities to the items4
+#    squash 1f96659 add item #6
+commit 6a09c14883cef3297293a1df6aa7cb1ee879f5ec
+Author: Matej Ljusev <mattljusev@gmail.com>2' on '5973257'.
+Date:   Wed Mar 30 17:34:59 2022 +0200
+# Changes to be committed:
+    Add 5 items to the shopping list
+#
+commit 739b559ce0a25b64c124c42efb40efe02a692ceb
+Author: Matej <59237104+Matt533@users.noreply.github.com>
+Date:   Wed Mar 30 17:31:33 2022 +0200
+~
+    Update README.mdop/SI_2022_lab1_195100/.git/COMMIT_EDITMSG[+] [unix] (17:48 30/03/2022)                     4,30 All
+"C:/Users/Matej/Desktop/SI_2022_lab1_195100/.git/COMMIT_EDITMSG" [unix] 24L, 624B written
+commit 944d344f7709ee920840fd7f2b1ad556c7076a1d
+Author: Matej <59237104+Matt533@users.noreply.github.com>
+Date:   Wed Mar 30 17:31:07 2022 +0200
+
+    Initial commit
+
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git checkout master
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git merge branch1 (Спојувањето на гранката branch1 со гранката master е успешно без никакви конфликти, со рекурзивна стратегија)
+Auto-merging shopping_list.txt
+Merge made by the 'ort' strategy.
+ shopping_list.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git merge branch2 (Спојувањето на гранката branch2 со гранката master е неуспешно т.е има конфликти во датотеката shopping_list.txt, овие конфликти може да се решат со зачувување на промените од гранката branch2)
+Auto-merging shopping_list.txt
+CONFLICT (content): Merge conflict in shopping_list.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git commit -a -m "branch2 merged to master" (Со помош на овој комит се спојува гранката branch2 со master)
+[master fc398ef] branch2 merged to master
+
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git аdd 195100.txt (Додавање на фајлот во кој водевме евиденција за командите кои ги користиме и објаснувањето за истите)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git commit -m "Add docs" (Нов комит)
+C:\Users\Matej\Desktop\SI_2022_lab1_195100>git push (Ги додаваме промените на remote репозиториумот т.е синхронизација со него)
