@@ -1,5 +1,5 @@
-Brokula
-Marula
-Malini
-Banana
-Bademi
+Brokula x 3
+Marula  x 4
+Malini  x 5
+Banana  x 1
+Bademi  x 2
